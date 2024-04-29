@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-image {
+  background-image: url('https://janschreiber.github.io/img2/black-chalk.jpg');
+  background-color: rgb(32, 32, 32);
+  font-family: "Finger Paint", sans-serif;
+  color: #E8E8E8;
+}
+
+
+::selection {
+  background-color: #E8E8E8;
+  color: black;
+}
+
+
+#gameboard {
+  width: 50vmin;
+  height: 55vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.cell {
+  border-right: 2px solid #E8E8E8;
+  border-bottom: 2px solid #E8E8E8;
+  width: 33.33333%;
+  height: 33.33333%;
+  font-size: 12vmin;
+  text-align: center;
+}
+
+
+.cell:nth-child(3n) {
+  border-right: none;
+}
+
+
+.cell:nth-child(6) ~ .cell {
+  border-bottom: none;
+}
+
+
+@media screen and (max-width: 607px) {
+  #gameboard {
+    width: 60vmin;
+    height: 70vmin;
+  }
+}
+
+.strike-row1 {
+  background-color: white;
+  top: calc(16.5% * 1);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.strike-row2 {
+  background-color: white;
+  top: calc(16.5% * 3);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.strike-row3 {
+  background-color: white;
+  top: calc(16.5% * 5);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.strike-col1 {
+  background-color: white;
+  height: 100%;
+  width: 4px;
+  left: calc(16.5% * 1);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.strike-col2 {
+  background-color: white;
+  height: 100%;
+  width: 4px;
+  left: calc(16.5% * 3);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.strike-col3 {
+  background-color: white;
+  height: 100%;
+  width: 4px;
+  left: calc(16.5% * 5);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+.strike-diag-lr {
+  background-color: white;
+  width: 90%;
+  top: 52%;
+  left: 8%;
+  transform: skewY(48deg);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.strike-diag-rl {
+  background-color: white;
+  width: 90%;
+  top: 52%;
+  left: 1%;
+  transform: skewY(-48.6deg);
+  box-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.winnerTextArea {
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
+}
